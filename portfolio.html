@@ -1,0 +1,17 @@
+portfolio_html = f"""
+<html>
+<head><title>{user_data['name']} Portfolio</title></head>
+<body>
+<h1>{user_data['name']}</h1>
+<h2>Projects</h2>
+<ul>
+{''.join([f"<li><b>{p['title']}</b>: {p['description']}</li>" for p in user_data['projects']])}
+</ul>
+<h2>Skills</h2>
+<p>{', '.join(user_data['skills'])}</p>
+</body>
+</html>
+"""
+
+with open("portfolio.html", "w") as f:
+    f.write(portfolio_html)
